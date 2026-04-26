@@ -43,6 +43,27 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
 
+/* ── LOGO INTRO OVERLAY ── */
+#logo-intro{
+  position:fixed;inset:0;z-index:9999;
+  background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .8s ease;
+}
+#logo-intro.done{opacity:0;pointer-events:none}
+#logo-intro video{
+  max-width:min(50vw,400px);max-height:min(50vh,400px);
+  object-fit:contain;
+}
+body.intro-playing{overflow:hidden}
+body.intro-playing #site-header{opacity:0;pointer-events:none}
+body.intro-playing #kv .kv-diagram-wrap,
+body.intro-playing #kv .kv-scroll-hint,
+body.intro-playing #kv .kv-bubbles{opacity:0;transform:translateY(20px);transition:opacity .8s ease .1s,transform .8s ease .1s}
+body:not(.intro-playing) #kv .kv-diagram-wrap,
+body:not(.intro-playing) #kv .kv-scroll-hint,
+body:not(.intro-playing) #kv .kv-bubbles{opacity:1;transform:none}
+
 /* ── FADE IN ANIMATION ── */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
@@ -371,7 +392,13 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
 .footer-bottom{padding:24px 0;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.08em}
 </style>
 </head>
-<body>
+<body class="intro-playing">
+
+<!-- ══ LOGO INTRO ══ -->
+<div id="logo-intro">
+  <video id="logo-video" muted playsinline preload="auto"
+         src="assets/video/logo-animation.mp4"></video>
+</div>
 
 <!-- ══ FULLSCREEN MENU ══ -->
 <div id="nav-overlay">
@@ -659,6 +686,34 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
 </footer>
 
 <script>
+// ── Logo intro animation ──
+(function(){
+  const intro = document.getElementById('logo-intro');
+  const video = document.getElementById('logo-video');
+
+  video.play().catch(()=>{});
+
+  video.addEventListener('ended', () => {
+    video.currentTime = video.duration;
+    video.pause();
+    setTimeout(() => {
+      document.body.classList.remove('intro-playing');
+      intro.classList.add('done');
+      intro.addEventListener('transitionend', () => {
+        intro.remove();
+      }, {once:true});
+    }, 600);
+  });
+
+  setTimeout(() => {
+    if (!intro.classList.contains('done')) {
+      document.body.classList.remove('intro-playing');
+      intro.classList.add('done');
+      intro.addEventListener('transitionend', () => intro.remove(), {once:true});
+    }
+  }, 15000);
+})();
+
 // ── Header scroll ──
 const header = document.getElementById('site-header');
 window.addEventListener('scroll', () => {
