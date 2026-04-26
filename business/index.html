@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事業内容 | 長尾工業株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1F2DF2;--primary-dark:#1520B8;--primary-light:#4D58F5;
+  --primary-pale:#F0F1FE;--dark:#0A0A1A;
+  --text:#1A1A1A;--sub:#666;--border:#E0E0E0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}.reveal-delay-5{transition-delay:.5s}.reveal-delay-6{transition-delay:.6s}
+
+/* ── COMMON ── */
+.sec-label{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:10px;display:block}
+.sec-heading{font-size:clamp(28px,3vw,42px);font-weight:700;line-height:1.2;letter-spacing:-.01em}
+.sec-heading-wrap{display:flex;align-items:flex-start;gap:20px}
+.sec-heading-bar{flex:0 0 3px;width:3px;height:42px;background:var(--primary);border-radius:2px;margin-top:6px}
+.arrow-link{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-size:15px;font-weight:700;text-decoration:none;position:relative;letter-spacing:.04em}
+.arrow-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:var(--primary);transition:width .3s ease}
+.arrow-link:hover::after{width:100%}
+.arrow-link .arr{display:inline-block;transition:transform .3s ease}
+.arrow-link:hover .arr{transform:translateX(6px)}
+
+/* ════════════════════
+   HEADER
+════════════════════ */
+#site-header{
+  position:fixed;top:0;left:0;right:0;height:80px;z-index:2100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;
+  transition:background .35s ease,box-shadow .35s ease;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+.header-logo{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:700;color:var(--primary);letter-spacing:.06em;text-decoration:none}
+.header-right{display:flex;align-items:center;gap:28px}
+.lang-switch{font-size:13px;font-weight:500;letter-spacing:.1em;color:#aaa}
+.lang-switch span{color:var(--primary);font-weight:700}
+.hamburger{display:flex;flex-direction:column;gap:6px;width:36px;cursor:pointer;padding:4px 0;position:relative;z-index:2100}
+.hamburger span{display:block;width:100%;height:1.5px;background:var(--text);border-radius:2px;transition:background .3s,transform .3s ease}
+.hamburger.open span{background:#fff}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ════════════════════
+   FULLSCREEN MENU
+════════════════════ */
+#nav-overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(10,10,26,.92);backdrop-filter:blur(20px);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .3s ease,visibility .3s ease;
+  display:flex;flex-direction:column;
+}
+#nav-overlay.open{opacity:1;visibility:visible;pointer-events:auto}
+.nav-overlay-top{padding:108px 60px 28px;visibility:hidden}
+.nav-overlay-main{flex:1;display:flex;align-items:center;padding:0 10vw}
+.nav-links{display:flex;flex-direction:column;gap:8px}
+.nav-link-item{display:flex;flex-direction:column;gap:4px;cursor:pointer;text-decoration:none;opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease;width:fit-content}
+#nav-overlay.open .nav-link-item:nth-child(1){opacity:1;transform:none;transition-delay:.05s}
+#nav-overlay.open .nav-link-item:nth-child(2){opacity:1;transform:none;transition-delay:.10s}
+#nav-overlay.open .nav-link-item:nth-child(3){opacity:1;transform:none;transition-delay:.15s}
+#nav-overlay.open .nav-link-item:nth-child(4){opacity:1;transform:none;transition-delay:.20s}
+#nav-overlay.open .nav-link-item:nth-child(5){opacity:1;transform:none;transition-delay:.25s}
+#nav-overlay.open .nav-link-item:nth-child(6){opacity:1;transform:none;transition-delay:.30s}
+.nav-link-ja{font-family:'Noto Sans JP',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:#fff;line-height:1;letter-spacing:.01em;transition:color .3s ease,transform .3s ease;display:block}
+.nav-link-en{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:400;color:#4D58F5;letter-spacing:.15em;text-transform:uppercase;transition:transform .3s ease;display:block}
+.nav-link-item:hover .nav-link-ja{color:#4D58F5;transform:translateX(12px)}
+.nav-link-item:hover .nav-link-en{transform:translateX(12px)}
+.nav-overlay-bottom{display:flex;justify-content:space-between;align-items:flex-end;padding:32px 60px}
+.nav-privacy{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .25s ease}
+.nav-privacy:hover{color:rgba(255,255,255,.8)}
+.nav-lang{font-size:13px;font-weight:500;letter-spacing:.1em;color:#aaa}
+.nav-lang span{color:#fff;font-weight:700}
+
+/* ════════════════════
+   PAGE HERO (Business list)
+════════════════════ */
+.page-hero{
+  height:400px;margin-top:80px;
+  background:linear-gradient(135deg,#1F2DF2,#4D58F5);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.page-hero-pattern{
+  position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(45deg,rgba(255,255,255,.08) 0,rgba(255,255,255,.08) 1px,transparent 0,transparent 50%),
+    repeating-linear-gradient(-45deg,rgba(255,255,255,.08) 0,rgba(255,255,255,.08) 1px,transparent 0,transparent 50%);
+  background-size:40px 40px;
+}
+.page-hero-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.12) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+.page-hero-content{position:relative;z-index:1;text-align:center;color:#fff}
+.page-hero-en{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:400;letter-spacing:.18em;color:rgba(255,255,255,.6);margin-bottom:12px;text-transform:uppercase}
+.page-hero-ja{font-size:40px;font-weight:700;letter-spacing:.04em}
+.page-hero-breadcrumb{
+  position:absolute;bottom:32px;left:60px;
+  font-size:13px;color:rgba(255,255,255,.75);
+  display:flex;align-items:center;gap:8px;
+}
+.page-hero-breadcrumb a{color:rgba(255,255,255,.75);text-decoration:none}
+.page-hero-breadcrumb a:hover{color:#fff}
+.page-hero-breadcrumb .sep{opacity:.5}
+
+/* ════════════════════
+   BUSINESS SECTIONS (alternating)
+════════════════════ */
+.biz-sections{padding:100px 80px;max-width:1440px;margin:0 auto}
+.biz-section{
+  display:flex;align-items:center;gap:80px;
+  max-width:1200px;margin:0 auto;
+  padding-bottom:100px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:100px;
+}
+.biz-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.biz-section.reverse{flex-direction:row-reverse}
+.biz-img-wrap{flex:0 0 50%}
+.biz-img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;display:block;box-shadow:0 8px 40px rgba(0,0,0,.1)}
+.biz-text{flex:1}
+.biz-en{font-family:'Unbounded',sans-serif;font-size:11px;font-weight:400;letter-spacing:.18em;color:var(--primary);text-transform:uppercase;margin-bottom:12px;display:block}
+.biz-name{font-size:32px;font-weight:700;margin-bottom:24px;letter-spacing:.02em}
+.biz-desc{font-size:16px;color:var(--sub);line-height:2.1;margin-bottom:32px}
+
+/* ════════════════════
+   CTA BOTTOM
+════════════════════ */
+.biz-cta{
+  background:var(--primary-pale);
+  padding:80px;text-align:center;
+}
+.biz-cta h2{font-size:clamp(20px,2.4vw,28px);font-weight:700;margin-bottom:32px;letter-spacing:.02em}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-light));
+  color:#fff;font-size:16px;font-weight:700;letter-spacing:.06em;
+  padding:20px 52px;border-radius:10px;text-decoration:none;
+  transition:transform .3s ease,box-shadow .3s ease,opacity .3s ease;
+}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(31,45,242,.3);opacity:.92}
+.cta-btn .arr{display:inline-block;transition:transform .3s ease}
+.cta-btn:hover .arr{transform:translateX(6px)}
+
+/* ════════════════════
+   FOOTER
+════════════════════ */
+#footer{background:var(--dark);padding:80px 80px 0;color:#fff}
+.footer-contact{margin-bottom:72px;cursor:pointer}
+.footer-contact-label{font-family:'Unbounded',sans-serif;font-size:clamp(40px,5vw,72px);font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:32px;line-height:1;color:#fff;text-decoration:none}
+.footer-contact-arr{font-size:clamp(32px,4vw,56px);display:inline-block;transition:transform .35s ease;color:var(--primary)}
+.footer-contact:hover .footer-contact-arr{transform:translateX(20px)}
+.footer-contact-sub{font-size:17px;color:rgba(255,255,255,.5);margin-top:14px;letter-spacing:.02em;font-weight:300}
+.footer-mid{display:flex;gap:64px;padding:56px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-nav{display:flex;flex-direction:column;gap:14px}
+.footer-nav a{color:rgba(255,255,255,.6);text-decoration:none;font-size:15px;transition:color .25s ease;letter-spacing:.02em}
+.footer-nav a:hover{color:#fff}
+.footer-address{display:flex;flex-direction:column;gap:12px;flex:1}
+.footer-address-item{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7}
+.footer-logo-wrap{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-end}
+.footer-logo{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:.08em}
+.footer-logo-sub{font-family:'Unbounded',sans-serif;font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.2em;margin-top:6px}
+.footer-bottom{padding:24px 0;text-align:center;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.08em}
+
+/* ════════════════════
+   SUB-PAGE: 土木
+════════════════════ */
+.subpage-divider{
+  background:var(--dark);color:#fff;
+  padding:20px 60px;font-family:'Unbounded',sans-serif;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  text-align:center;opacity:.6;
+}
+
+/* Sub hero */
+.sub-hero{
+  height:400px;margin-top:0;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.sub-hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80') center/cover no-repeat;
+}
+.sub-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(31,45,242,.7),rgba(10,10,26,.6));
+}
+.sub-hero-content{position:relative;z-index:1;text-align:center;color:#fff}
+.sub-hero-en{font-family:'Unbounded',sans-serif;font-size:13px;letter-spacing:.18em;color:rgba(255,255,255,.6);margin-bottom:12px}
+.sub-hero-ja{font-size:40px;font-weight:700;letter-spacing:.04em}
+.sub-hero-breadcrumb{position:absolute;bottom:32px;left:60px;font-size:13px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px}
+.sub-hero-breadcrumb a{color:rgba(255,255,255,.75);text-decoration:none}
+.sub-hero-breadcrumb a:hover{color:#fff}
+.sub-hero-breadcrumb .sep{opacity:.5}
+
+/* Sub overview */
+.sub-overview{padding:100px 80px;max-width:1440px;margin:0 auto}
+.sub-overview-inner{display:flex;align-items:center;gap:80px;max-width:1200px;margin:0 auto}
+.sub-overview-text{flex:1}
+.sub-overview-text h2{font-size:clamp(22px,2.4vw,32px);font-weight:700;line-height:1.5;margin-bottom:28px;letter-spacing:.01em}
+.sub-overview-text p{font-size:16px;color:var(--sub);line-height:2.1}
+.sub-overview-img-wrap{flex:0 0 45%}
+.sub-overview-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.1)}
+
+/* Services */
+.sub-services{background:var(--primary-pale);padding:100px 80px}
+.sub-services-inner{max-width:1200px;margin:0 auto}
+.sub-services-header{margin-bottom:56px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{
+  background:#fff;border-radius:12px;padding:32px 28px;
+  box-shadow:0 4px 20px rgba(0,0,0,.05);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 10px 32px rgba(31,45,242,.1)}
+.service-icon{font-size:36px;margin-bottom:16px}
+.service-name{font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:.02em}
+.service-desc{font-size:13px;color:var(--sub);line-height:1.8}
+
+/* Gallery */
+.sub-gallery{padding:100px 80px;max-width:1440px;margin:0 auto}
+.sub-gallery-inner{max-width:1200px;margin:0 auto}
+.sub-gallery-header{margin-bottom:48px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gallery-img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  border-radius:8px;display:block;
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+.gallery-img:hover{transform:scale(1.03);box-shadow:0 8px 32px rgba(0,0,0,.15)}
+
+/* Related biz nav */
+.sub-related{background:var(--primary-pale);padding:80px}
+.sub-related-inner{max-width:1200px;margin:0 auto}
+.sub-related h2{font-size:24px;font-weight:700;margin-bottom:40px;letter-spacing:.02em}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.related-card{
+  background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;text-decoration:none;
+  box-shadow:0 4px 20px rgba(0,0,0,.06);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.related-card:hover{transform:translateY(-6px);box-shadow:0 10px 28px rgba(31,45,242,.12)}
+.related-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.related-card-body{padding:20px}
+.related-card-en{font-family:'Unbounded',sans-serif;font-size:9px;letter-spacing:.15em;color:var(--primary);margin-bottom:6px}
+.related-card-name{font-size:16px;font-weight:700;color:var(--text)}
+</style>
+</head>
+<body>
+
+<!-- ══ FULLSCREEN MENU ══ -->
+<div id="nav-overlay">
+  <div class="nav-overlay-top"></div>
+  <div class="nav-overlay-main">
+    <nav class="nav-links">
+      <a href="Corporate Site.html" class="nav-link-item"><span class="nav-link-ja">ホーム</span><span class="nav-link-en">HOME</span></a>
+      <a href="#" class="nav-link-item"><span class="nav-link-ja">事業内容</span><span class="nav-link-en">BUSINESS</span></a>
+      <a href="#" class="nav-link-item"><span class="nav-link-ja">会社情報</span><span class="nav-link-en">COMPANY</span></a>
+      <a href="#" class="nav-link-item"><span class="nav-link-ja">採用情報</span><span class="nav-link-en">RECRUIT</span></a>
+      <a href="#" class="nav-link-item"><span class="nav-link-ja">お問い合わせ</span><span class="nav-link-en">CONTACT</span></a>
+      <a href="#" class="nav-link-item"><span class="nav-link-ja">ブログ</span><span class="nav-link-en">BLOG</span></a>
+    </nav>
+  </div>
+  <div class="nav-overlay-bottom">
+    <a href="#" class="nav-privacy">プライバシーポリシー</a>
+    <div class="nav-lang"><span>JP</span> | EN</div>
+  </div>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header id="site-header">
+  <a href="Corporate Site.html" class="header-logo">長尾工業</a>
+  <div class="header-right">
+    <div class="lang-switch"><span>JP</span> | EN</div>
+    <div class="hamburger" aria-label="メニュー"><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<div class="page-hero">
+  <div class="page-hero-pattern"></div>
+  <div class="page-hero-dots"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-en">BUSINESS</div>
+    <div class="page-hero-ja">事業内容</div>
+  </div>
+  <div class="page-hero-breadcrumb">
+    <a href="Corporate Site.html">ホーム</a>
+    <span class="sep">›</span>
+    <span>事業内容</span>
+  </div>
+</div>
+
+<!-- ══ BUSINESS SECTIONS ══ -->
+<div class="biz-sections">
+
+  <!-- 01 土木 -->
+  <div class="biz-section">
+    <div class="biz-img-wrap reveal-left">
+      <img class="biz-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="土木事業" loading="lazy">
+    </div>
+    <div class="biz-text reveal-right">
+      <span class="biz-en">CIVIL ENGINEERING</span>
+      <h2 class="biz-name">土木事業</h2>
+      <p class="biz-desc">道路・河川・橋梁などインフラの施工を通じて、地域の安全と暮らしを支えています。公共工事を中心に、確かな技術と豊富な経験で高品質な施工を実現します。</p>
+      <a href="Business_Doboku.html" class="arrow-link">詳しく見る <span class="arr">→</span></a>
+    </div>
+  </div>
+
+  <!-- 02 林業 -->
+  <div class="biz-section reverse">
+    <div class="biz-img-wrap reveal-right">
+      <img class="biz-img" src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=900&q=80" alt="林業事業" loading="lazy">
+    </div>
+    <div class="biz-text reveal-left">
+      <span class="biz-en">FORESTRY</span>
+      <h2 class="biz-name">林業事業</h2>
+      <p class="biz-desc">森林の伐採・搬出・造林を行い、山林資源の持続的な活用に貢献します。自然環境と共生しながら、次世代に豊かな森林を引き継ぎます。</p>
+      <a href="Business_Ringyo.html" class="arrow-link">詳しく見る <span class="arr">→</span></a>
+  <div class="biz-section">
+    <div class="biz-img-wrap reveal-left">
+      <img class="biz-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80" alt="プラント事業" loading="lazy">
+    </div>
+    <div class="biz-text reveal-right">
+      <span class="biz-en">PLANT</span>
+      <h2 class="biz-name">プラント事業</h2>
+      <p class="biz-desc">工場設備の施工・配管・メンテナンスで、産業の安定稼働を支えます。設計から施工、保守まで一貫した対応力が強みです。</p>
+      <a href="Business_Plant.html" class="arrow-link">詳しく見る <span class="arr">→</span></a>
+    </div>
+  </div>
+
+  <!-- 04 運送 -->
+  <div class="biz-section reverse">
+    <div class="biz-img-wrap reveal-right">
+      <img class="biz-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=900&q=80" alt="運送事業" loading="lazy">
+    </div>
+    <div class="biz-text reveal-left">
+      <span class="biz-en">TRANSPORT</span>
+      <h2 class="biz-name">運送事業</h2>
+      <p class="biz-desc">建設資材・木材・機材など、あらゆる物資を安全かつ確実に輸送します。自社車両による迅速な配送体制を整えています。</p>
+      <a href="Business_Unso.html" class="arrow-link">詳しく見る <span class="arr">→</span></a>
+    </div>
+  </div>
+
+  <!-- 05 整備工場 -->
+  <div class="biz-section">
+    <div class="biz-img-wrap reveal-left">
+      <img class="biz-img" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=900&q=80" alt="整備工場事業" loading="lazy">
+    </div>
+    <div class="biz-text reveal-right">
+      <span class="biz-en">MAINTENANCE</span>
+      <h2 class="biz-name">整備工場事業</h2>
+      <p class="biz-desc">車両・重機の点検整備・車検を行い、現場の安全運行を守ります。大型車両から特殊車両まで幅広く対応します。</p>
+      <a href="Business_Seibi.html" class="arrow-link">詳しく見る <span class="arr">→</span></a>
+<div class="biz-cta reveal">
+  <h2>お問い合わせ・ご相談はこちら</h2>
+  <a href="#" class="cta-btn">お問い合わせ <span class="arr">→</span></a>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer id="footer">
+  <a href="#" class="footer-contact">
+    <span class="footer-contact-label">CONTACT <span class="footer-contact-arr">→</span></span>
+    <p class="footer-contact-sub">お問い合わせ・ご相談はお気軽にどうぞ</p>
+  </a>
+  <div class="footer-mid">
+    <nav class="footer-nav">
+      <a href="Corporate Site.html">ホーム</a>
+      <a href="#">事業内容</a>
+      <a href="#">会社情報</a>
+      <a href="#">採用情報</a>
+      <a href="#">お問い合わせ</a>
+      <a href="#">ブログ</a>
+    </nav>
+    <div class="footer-address">
+      <div class="footer-address-item">📍 本社 〒000-0000 ○○県○○市○○町1-1</div>
+      <div class="footer-address-item">📍 林業事業所 〒000-0000 ○○県○○市○○2-3</div>
+      <div class="footer-address-item">📍 プラント事業所 〒000-0000 ○○県○○市○○4-5</div>
+      <div class="footer-address-item">📍 運送事業所 〒000-0000 ○○県○○市○○6-7</div>
+      <div class="footer-address-item">📍 整備工場 〒000-0000 ○○県○○市○○8-9</div>
+    </div>
+    <div class="footer-logo-wrap">
+      <div class="footer-logo">長尾工業</div>
+      <div class="footer-logo-sub">NAGAO KOGYO CO., LTD.</div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 長尾工業株式会社 All Rights Reserved.</div>
+</footer>
+
+
+<script>
+// ── Hamburger menu ──
+// ── Hamburger menu ──
+const hamburger = document.querySelector('.hamburger');
+const navOverlay = document.getElementById('nav-overlay');
+const header = document.getElementById('site-header');
+hamburger.addEventListener('click', () => {
+  const isOpen = navOverlay.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+navOverlay.querySelectorAll('.nav-link-item').forEach(link => {
+  link.addEventListener('click', () => {
+    navOverlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+// ── Scroll reveal ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
