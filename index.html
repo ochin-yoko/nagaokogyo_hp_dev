@@ -689,23 +689,16 @@ body:not(.intro-playing) #kv .kv-bubbles{opacity:1;transform:none;transition:opa
 (function(){
   const video = document.getElementById('logo-video');
 
-  video.play().catch(()=>{
-    document.body.classList.remove('intro-playing');
-  });
+  video.play().catch(()=>{});
 
   video.addEventListener('ended', () => {
     video.currentTime = video.duration;
     video.pause();
-    setTimeout(() => {
-      document.body.classList.remove('intro-playing');
-    }, 400);
   });
 
   setTimeout(() => {
-    if (document.body.classList.contains('intro-playing')) {
-      document.body.classList.remove('intro-playing');
-    }
-  }, 15000);
+    document.body.classList.remove('intro-playing');
+  }, 4000);
 })();
 
 // ── Header scroll ──
