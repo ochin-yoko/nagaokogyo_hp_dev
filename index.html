@@ -384,7 +384,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
         <span class="nav-link-ja">ホーム</span>
         <span class="nav-link-en">HOME</span>
       </a>
-      <a href="#business" class="nav-link-item">
+      <a href="business/" class="nav-link-item">
         <span class="nav-link-ja">事業内容</span>
         <span class="nav-link-en">BUSINESS</span>
       </a>
@@ -491,7 +491,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
         <div class="biz-card-body">
           <h3 class="biz-card-name">土木事業</h3>
           <p class="biz-card-desc">道路・河川・橋梁などインフラの施工を通じて、地域の安全と暮らしを支えています。</p>
-          <a href="Business_Doboku.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
+          <a href="business/doboku.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -504,7 +504,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
         <div class="biz-card-body">
           <h3 class="biz-card-name">林業事業</h3>
           <p class="biz-card-desc">森林の伐採・搬出・造林を行い、山林資源の持続的な活用に貢献します。</p>
-          <a href="Business_Ringyo.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
+          <a href="business/ringyo.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -517,7 +517,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
         <div class="biz-card-body">
           <h3 class="biz-card-name">プラント事業</h3>
           <p class="biz-card-desc">工場設備の施工・配管・メンテナンスで、産業の安定稼働を支えます。</p>
-          <a href="Business_Plant.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
+          <a href="business/plant.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
         </div>
       </div>
     </div>
@@ -533,7 +533,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
         <div class="biz-card-body">
           <h3 class="biz-card-name">運送事業</h3>
           <p class="biz-card-desc">建設資材・木材・機材など、あらゆる物資を安全かつ確実に輸送します。</p>
-          <a href="Business_Unso.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
+          <a href="business/unso.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
         </div>
       </div>
 
@@ -546,7 +546,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
         <div class="biz-card-body">
           <h3 class="biz-card-name">整備工場事業</h3>
           <p class="biz-card-desc">車両・重機の点検整備・車検を行い、現場の安全運行を守ります。</p>
-          <a href="Business_Seibi.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
+          <a href="business/seibi.html" class="arrow-link" style="font-size:13px">詳しく見る <span class="arr">→</span></a>
         </div>
       </div>
     </div>
@@ -636,8 +636,8 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
   </a>
   <div class="footer-mid">
     <nav class="footer-nav">
-      <a href="#">ホーム</a>
-      <a href="#business">事業内容</a>
+      <a href="./">ホーム</a>
+      <a href="business/">事業内容</a>
       <a href="#">会社情報</a>
       <a href="#recruit">採用情報</a>
       <a href="#">お問い合わせ</a>
@@ -701,7 +701,7 @@ navOverlay.querySelectorAll('.nav-link-item').forEach(link => {
     {left:GAP,top:'50%',transform:'translateY(-50%)'},
     {left:GAP,top:'50%',transform:'translateY(-50%)'},
   ];
-  const bizLinks = ['Business_Doboku.html','Business_Ringyo.html','Business_Plant.html','Business_Unso.html','Business_Seibi.html'];
+  const bizLinks = ['business/doboku.html','business/ringyo.html','business/plant.html','business/unso.html','business/seibi.html'];
   businesses.forEach((biz,i)=>{
     const a=biz.angle*Math.PI/180;
     const lp=50+R*Math.cos(a), tp=50+R*Math.sin(a);
