@@ -62,11 +62,10 @@ body:not(.intro-playing) #logo-intro{
   position:absolute;
   max-width:min(40vw,320px);
   height:auto;
-  opacity:0;
-  transition:opacity .6s ease;
+  display:none;
 }
 #logo-intro .logo-static.show{
-  opacity:1;
+  display:block;
 }
 body.intro-playing{overflow:hidden}
 body.intro-playing #site-header{opacity:0;pointer-events:none}
@@ -710,12 +709,8 @@ body:not(.intro-playing) #kv .kv-bubbles{opacity:1;transform:none;transition:opa
   video.play().catch(()=>{});
 
   video.addEventListener('ended', () => {
-    video.currentTime = video.duration;
-    video.pause();
+    video.style.display = 'none';
     logoImg.classList.add('show');
-    setTimeout(() => {
-      video.style.display = 'none';
-    }, 600);
   });
 
   setTimeout(() => {
