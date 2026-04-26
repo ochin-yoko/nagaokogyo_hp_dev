@@ -49,6 +49,10 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;ove
   background:#fff;
   display:flex;align-items:center;justify-content:center;
   pointer-events:none;
+  transition:background .8s ease;
+}
+body:not(.intro-playing) #logo-intro{
+  background:transparent;
 }
 #logo-intro video{
   max-width:min(50vw,400px);max-height:min(50vh,400px);
