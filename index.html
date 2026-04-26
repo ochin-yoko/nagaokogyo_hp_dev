@@ -55,8 +55,18 @@ body:not(.intro-playing) #logo-intro{
   background:transparent;
 }
 #logo-intro video{
-  max-width:min(50vw,400px);max-height:min(50vh,400px);
+  max-width:min(90vw,1600px);max-height:min(90vh,1600px);
   object-fit:contain;
+}
+#logo-intro .logo-static{
+  position:absolute;
+  max-width:min(40vw,320px);
+  height:auto;
+  opacity:0;
+  transition:opacity .6s ease;
+}
+#logo-intro .logo-static.show{
+  opacity:1;
 }
 body.intro-playing{overflow:hidden}
 body.intro-playing #site-header{opacity:0;pointer-events:none}
@@ -453,6 +463,8 @@ body:not(.intro-playing) #kv .kv-bubbles{opacity:1;transform:none;transition:opa
   <div id="logo-intro">
     <video id="logo-video" muted playsinline preload="auto"
            src="assets/video/logo-animation.mp4"></video>
+    <img class="logo-static" id="logo-static"
+         src="assets/images/logo.png" alt="長尾工業ロゴ">
   </div>
 
   <div class="kv-bubbles">
@@ -693,11 +705,17 @@ body:not(.intro-playing) #kv .kv-bubbles{opacity:1;transform:none;transition:opa
 (function(){
   const video = document.getElementById('logo-video');
 
+  const logoImg = document.getElementById('logo-static');
+
   video.play().catch(()=>{});
 
   video.addEventListener('ended', () => {
     video.currentTime = video.duration;
     video.pause();
+    logoImg.classList.add('show');
+    setTimeout(() => {
+      video.style.display = 'none';
+    }, 600);
   });
 
   setTimeout(() => {
